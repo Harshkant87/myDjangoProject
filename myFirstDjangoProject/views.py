@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render #for rendering html pages 
 
 # def homePage(request):
@@ -31,11 +31,14 @@ def courseDetails(request, courseid):
 
 def userForm(request):
     try:
-        if request.method == "POST":
-            name = request.POST['name']
-            sex = request.POST['sex']
-            print(name)
-            print(sex)
+        # if request.method == "POST":
+        name = request.POST['name']
+        sex = request.POST['sex']
+        print(name)
+        print(sex)
+
+        return HttpResponseRedirect('/about-us/')
     except:
         pass
-    return render(request, "userforms.html")
+    # return render(request, "userforms.html")
+    return HttpResponseRedirect('/about-us/')

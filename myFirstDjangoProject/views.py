@@ -31,10 +31,11 @@ def courseDetails(request, courseid):
 
 def userForm(request):
     try:
-        name = request.GET['name']
-        sex = request.GET['sex']
-        print(name)
-        print(sex)
+        if request.method == "POST":
+            name = request.POST['name']
+            sex = request.POST['sex']
+            print(name)
+            print(sex)
     except:
         pass
     return render(request, "userforms.html")

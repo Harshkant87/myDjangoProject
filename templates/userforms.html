@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="contact-area section-gap" id="contact">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="menu-content pb-60 col-lg-8">
+                <div class="title text-center">
+                    <h1 class="mb-10">User-Form</h1>
+                    
+                </div>
+            </div>
+        </div>
+        <div class = "row">
+            <div class = "col-12">
+                <form>
+                    <div>
+                        <form class="form-area " id="myForm" action="mail.php" method="post" class="contact-form text-right">
+                            <label for="name">Name:</label>
+                            <input type="text" name="name"><br><br>
+                            <label for="sex">Sex:</label>
+                            <input type="radio" name="sex" id="male" value="male">
+                            <label for="male">Male</label>
+                            <input type="radio" name="sex" id="female" value="female">
+                            <label for="female">Female</label> <br><br>
+                            <label for="country">Country: </label>
+                            <select name="country" id="country">
+                                <option>Select an option</option>
+                                <option value="nepal">India</option>
+                                <option value="nepal">Nepal</option>
+                                <option value="usa">USA</option>
+                                <option value="australia">Australia</option>
+                            </select><br><br>
+                            <label for="message">Message:</label><br>
+                            <textarea name="message" id="message" cols="30" rows="4"></textarea><br><br>
+                            <input type="checkbox" name="newsletter" id="newsletter">
+                            <label for="newsletter">Subscribe?</label><br><br>
+
+                            <div>
+                                <button type = "submit"> Save </button>
+                            </div>
+                        </form>		
+                    </div>
+                </form>
+            </div>
+        </div>														 
+    </div>	
+</section>
+
+
+{% endblock  %}

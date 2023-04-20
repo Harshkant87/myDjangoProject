@@ -28,3 +28,13 @@ def contact(request):
 
 def courseDetails(request, courseid):
     return HttpResponse(courseid)
+
+def userForm(request):
+    try:
+        name = request.GET['name']
+        sex = request.GET['sex']
+        print(name)
+        print(sex)
+    except:
+        pass
+    return render(request, "userforms.html")

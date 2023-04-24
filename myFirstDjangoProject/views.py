@@ -26,5 +26,26 @@ def Course(request):
 def contact(request):
     return render(request, "contact.html")
 
+def calculator(request):
+    result = ''
+    try:
+        if request.method == "POST":
+            n1 = eval(request.POST.get('num1'))
+            n2 = eval(request.POST.get('num2'))
+            opr = request.POST.get('opr')
+            if opr == "+":
+                result = n1 + n2
+            elif opr == "-":
+                result = n1 - n2
+            elif opr == "*":
+                result = n1 * n2
+            elif opr == "/":
+                result = n1 / n2
+
+    except:
+        result = "Invalid Operation!"
+    # print(result) print the result
+    return render(request, 'calculator.html', {'result': result})
+
 def courseDetails(request, courseid):
     return HttpResponse(courseid)

@@ -49,3 +49,15 @@ def calculator(request):
 
 def courseDetails(request, courseid):
     return HttpResponse(courseid)
+
+def evenodd(request):
+    result = ' '
+
+    if request.method == "POST":
+        num = eval(request.POST.get('num1'))
+        if num % 2 == 0:
+            result = 'Even'
+        else:
+            result = 'Odd'
+
+    return render(request, 'evenodd.html', {'result': result})

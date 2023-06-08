@@ -24,6 +24,7 @@ urlpatterns = [
     path('courses/', views.Course),
     path('contact/', views.contact),
     path('calculator/', views.calculator),
+    path('evenodd/', views.evenodd),
     path('courses/<int:courseid>', views.courseDetails), #we can use <str: var_name> or <slug: var_name> as well
     # if you are not clear with the data type then simply pass the data e.g. courses/<courseid>
 
